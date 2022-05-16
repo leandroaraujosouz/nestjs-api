@@ -22,7 +22,7 @@ let UsersController = class UsersController {
         this.usersService = usersService;
     }
     create(createUserDto) {
-        return this.usersService.createH(createUserDto);
+        return this.usersService.create(createUserDto);
     }
     findAll() {
         return this.usersService.findAll();
