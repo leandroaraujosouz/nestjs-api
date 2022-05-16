@@ -1,4 +1,4 @@
-name: Nifi Build
+name: GitActions Nifi Build
 
 on:
   push:
