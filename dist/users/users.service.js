@@ -21,7 +21,7 @@ let UsersService = class UsersService {
     constructor(userModel) {
         this.userModel = userModel;
     }
-    createH(createUserDto) {
+    create(createUserDto) {
         const user = new this.userModel(createUserDto);
         return user.save();
     }

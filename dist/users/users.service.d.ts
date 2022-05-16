@@ -13,7 +13,7 @@ import { User, UserDocument } from './entities/user.entity';
 export declare class UsersService {
     private userModel;
     constructor(userModel: Model<UserDocument>);
-    createH(createUserDto: CreateUserDto): Promise<User & import("mongoose").Document<any, any, any> & {
+    create(createUserDto: CreateUserDto): Promise<User & import("mongoose").Document<any, any, any> & {
         _id: any;
     }>;
     findAll(): import("mongoose").Query<(User & import("mongoose").Document<any, any, any> & {
