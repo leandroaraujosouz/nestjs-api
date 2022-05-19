@@ -73,7 +73,7 @@ RUN curl -fSL ${MIRROR_BASE_URL}/${NIFI_BINARY_PATH} -o ${NIFI_BASE_DIR}/nifi-${
     && mkdir -p ${NIFI_HOME}/provenance_repository \
     && mkdir -p ${NIFI_HOME}/state \
     && mkdir -p ${NIFI_LOG_DIR} \
-    && cp /opt/nifi/nifi-aws-nar-1.14.0.nar /opt/nifi/nifi-1.12.1/nifi-aws-nar-1.14.0.nar
+    && cp /opt/nifi/nifi-aws-nar-1.14.0.nar /opt/nifi/nifi-1.12.1/lib/nifi-aws-nar-1.14.0.nar
 
 # COPY nifi-aws-nar-1.14.0.nar /opt/nifi/nifi-1.12.1/nifi-aws-nar-1.14.0.nar
 
