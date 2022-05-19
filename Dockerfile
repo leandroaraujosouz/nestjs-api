@@ -83,7 +83,7 @@ VOLUME ${NIFI_LOG_DIR} \
 
 # Clear nifi-env.sh in favour of configuring all environment variables in the Dockerfile
 RUN echo "#!/bin/sh\n" > $NIFI_HOME/bin/nifi-env.sh
-RUN cp nifi-aws-nar-1.9.2.nar $NIFI_HOME/lib/nifi-aws-nar-1.9.2.nar
+RUN cp /var/www/nifi-aws-nar-1.9.2.nar $NIFI_HOME/lib/nifi-aws-nar-1.9.2.nar
 
 # Web HTTP(s) & Socket Site-to-Site Ports
 EXPOSE 8080 8443 10000 8000
