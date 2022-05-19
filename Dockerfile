@@ -24,7 +24,7 @@ LABEL site="https://nifi.apache.org"
 
 ARG UID=1000
 ARG GID=1000
-ARG NIFI_VERSION=1.15.1
+ARG NIFI_VERSION=1.12.1
 ARG BASE_URL=https://archive.apache.org/dist
 ARG MIRROR_BASE_URL=${MIRROR_BASE_URL:-${BASE_URL}}
 ARG NIFI_BINARY_PATH=${NIFI_BINARY_PATH:-/nifi/${NIFI_VERSION}/nifi-${NIFI_VERSION}-bin.zip}
@@ -83,7 +83,7 @@ VOLUME ${NIFI_LOG_DIR} \
 
 # Clear nifi-env.sh in favour of configuring all environment variables in the Dockerfile
 RUN echo "#!/bin/sh\n" > $NIFI_HOME/bin/nifi-env.sh
-COPY nifi-aws-nar-1.9.2.nar $NIFI_HOME/lib/nifi-aws-nar-1.9.2.nar
+COPY nifi-aws-nar-1.9.2.nar $NIFI_HOME/lib/nifi-aws-nar-1.14.2.nar
 
 # Web HTTP(s) & Socket Site-to-Site Ports
 EXPOSE 8080 8443 10000 8000
