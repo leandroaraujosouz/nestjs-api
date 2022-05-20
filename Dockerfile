@@ -75,7 +75,7 @@ RUN curl -fSL ${MIRROR_BASE_URL}/${NIFI_BINARY_PATH} -o ${NIFI_BASE_DIR}/nifi-${
     && mkdir -p ${NIFI_LOG_DIR} 
     # && cp /opt/nifi/nifi-registry-nar-1.14.0 /opt/nifi/nifi-1.12.1/lib/nifi-registry-nar-1.14.0
 
-COPY nifi-registry-nar-1.14.0 /opt/nifi/nifi-1.12.1/lib/nifi-registry-nar-1.14.0
+COPY nifi-registry-nar-1.14.0.nar /opt/nifi/nifi-1.12.1/lib/nifi-registry-nar-1.14.0.nar
 
 RUN ln -s ${NIFI_HOME} ${NIFI_BASE_DIR}/nifi-${NIFI_VERSION}
 
