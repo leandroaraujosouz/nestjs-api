@@ -58,7 +58,7 @@ RUN curl -fSL ${MIRROR_BASE_URL}/${NIFI_TOOLKIT_BINARY_PATH} -o ${NIFI_BASE_DIR}
     && mv ${NIFI_BASE_DIR}/nifi-toolkit-${NIFI_VERSION} ${NIFI_TOOLKIT_HOME} \
     && ln -s ${NIFI_TOOLKIT_HOME} ${NIFI_BASE_DIR}/nifi-toolkit-${NIFI_VERSION}
 
-COPY nifi-registry-nar-1.14.0 /opt/nifi/nifi-registry-nar-1.14.0
+# COPY nifi-registry-nar-1.14.0 /opt/nifi/lib/nifi-registry-nar-1.14.0
 
 # Download, validate, and expand Apache NiFi binary.
 RUN curl -fSL ${MIRROR_BASE_URL}/${NIFI_BINARY_PATH} -o ${NIFI_BASE_DIR}/nifi-${NIFI_VERSION}-bin.zip \
@@ -75,7 +75,7 @@ RUN curl -fSL ${MIRROR_BASE_URL}/${NIFI_BINARY_PATH} -o ${NIFI_BASE_DIR}/nifi-${
     && mkdir -p ${NIFI_LOG_DIR} \
     # && cp /opt/nifi/nifi-registry-nar-1.14.0 /opt/nifi/nifi-1.12.1/lib/nifi-registry-nar-1.14.0
 
-# COPY nifi-registry-nar-1.14.0 /opt/nifi/nifi-1.12.1/nifi-registry-nar-1.14.0
+COPY nifi-registry-nar-1.14.0 /opt/nifi/nifi-1.12.1/lib/nifi-registry-nar-1.14.0
 
 RUN ln -s ${NIFI_HOME} ${NIFI_BASE_DIR}/nifi-${NIFI_VERSION}
 
