@@ -75,9 +75,11 @@ RUN curl -fSL ${MIRROR_BASE_URL}/${NIFI_BINARY_PATH} -o ${NIFI_BASE_DIR}/nifi-${
     && mkdir -p ${NIFI_LOG_DIR} 
     # && cp /opt/nifi/nifi-registry-nar-1.14.0 /opt/nifi/nifi-1.12.1/lib/nifi-registry-nar-1.14.0
 
-COPY nifi-registry-nar-1.14.0.nar /opt/nifi/nifi-1.12.1/lib/nifi-registry-nar-1.14.0.nar
+# COPY nifi-registry-nar-1.14.0.nar /opt/nifi/nifi-1.12.1/lib/nifi-registry-nar-1.14.0.nar
 
 RUN ln -s ${NIFI_HOME} ${NIFI_BASE_DIR}/nifi-${NIFI_VERSION}
+
+COPY nifi-registry-nar-1.14.0.nar /opt/nifi/nifi-1.12.1/lib/nifi-registry-nar-1.14.0.nar
 
 VOLUME ${NIFI_LOG_DIR} \
        ${NIFI_HOME}/conf \
@@ -105,3 +107,4 @@ WORKDIR ${NIFI_HOME}
 # thus normal shell processing does not happen:
 # https://docs.docker.com/engine/reference/builder/#exec-form-entrypoint-example
 ENTRYPOINT ["../scripts/start.sh"]
+RUN sh /opt/nifi/nifi-1.12.1/nifi.sh start
