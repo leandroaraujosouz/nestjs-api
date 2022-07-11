@@ -79,7 +79,7 @@ RUN curl -fSL ${MIRROR_BASE_URL}/${NIFI_BINARY_PATH} -o ${NIFI_BASE_DIR}/nifi-${
 
 RUN ln -s ${NIFI_HOME} ${NIFI_BASE_DIR}/nifi-${NIFI_VERSION}
 
-COPY nifi-executedynamodb-nar-1.0.1.nar /opt/nifi/nifi-1.12.1/lib/
+COPY nifi-aws-nar-1.14.0.nar /opt/nifi/nifi-1.12.1/lib/nifi-aws-nar-1.14.0.nar
 
 VOLUME ${NIFI_LOG_DIR} \
        ${NIFI_HOME}/conf \
