@@ -108,3 +108,4 @@ WORKDIR ${NIFI_HOME}
 # https://docs.docker.com/engine/reference/builder/#exec-form-entrypoint-example
 ENTRYPOINT ["../scripts/start.sh"]
 RUN sh /opt/nifi/nifi-1.12.1/bin/nifi.sh start
+run tail -f /opt/nifi/nifi-current/conf/bootstrap.conf
